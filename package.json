@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homapge": "https://github.com/hupaschool/trainingDimensions.git",
+  "homapge": "https://hupaschool.github.io/trainingDimensions/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
