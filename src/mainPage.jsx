@@ -1,13 +1,23 @@
-import lowerBlob from '/lowerBlob.svg';
-import higherBlob from '/higherBlob.svg';
-import strippedCircle from '/strippedCircle.svg';
-import plusSign from '/plusSign.svg';
+import lowerBlob from './assets/lowerBlob.svg';
+import higherBlob from './assets/higherBlob.svg';
+import strippedCircle from './assets/strippedCircle.svg';
+import plusSign from './assets/plusSign.svg';
+import schoolLogo from './assets/schoolLogo.svg';
+import bigFive from './assets/bigFive.svg';
 
 const MainPage = () => {
     return ( 
         <div className="all-pages">
             <div className="first-page">
-                first page
+                <img src= {schoolLogo} className= "school-logo" alt="school logo"/>
+                <div className='first-page-content'>
+                    <img src={bigFive} className='big-five' alt='big five'/>
+                    <div className='first-page-text' id= "lomdat">לומדת</div>
+                    <div className='first-page-text' id= "memadei">ממדי</div>
+                    <div className='first-page-text' id= "hadracha">ההדרכה</div>
+
+
+                </div>
             </div>
             <div className="second-page">
                 second page

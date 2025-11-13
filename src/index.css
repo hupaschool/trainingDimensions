@@ -1,9 +1,30 @@
-*{
+@font-face {
+  font-family: "aduma-light";
+  src: url(./fonts/AdumaLight.ttf);
+}
+
+@font-face {
+  font-family: "aduma-medium";
+  src: url(./fonts/AdumaMedium.ttf);
+}
+
+@font-face {
+  font-family: "aduma-regular";
+  src: url(./fonts/AdumaRegular.ttf);
+}
+
+@font-face {
+  font-family: "aduma-bold";
+  src: url(./fonts/AdumaBold.ttf);
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
 }
@@ -12,13 +33,15 @@ html, body {
   position: relative;
   height: 300vh;
   width: 100%;
-  background-image: url("/crollingBg.svg");
+  background-image: url("./assets/crollingBg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
-.first-page, .second-page, .third-page {
+.first-page,
+.second-page,
+.third-page {
   height: 100vh;
   width: 100%;
 }
@@ -28,21 +51,21 @@ html, body {
   width: 170%;
 }
 
-#lower-blob{
+#lower-blob {
   bottom: -30vh;
   left: -40vw;
   transform: rotate(-5deg);
   z-index: 2;
 }
 
-#higher-blob{
+#higher-blob {
   bottom: -25vh;
   left: -50vw;
   transform: rotate(-15deg);
   z-index: 3;
 }
 
-#plus-sign{
+#plus-sign {
   position: absolute;
   width: 10vw;
   right: 20vw;
@@ -50,9 +73,46 @@ html, body {
   z-index: 1;
 }
 
-#stripped-circle{
+#stripped-circle {
   position: absolute;
   width: 60vw;
   bottom: 20vh;
   z-index: 1;
+}
+
+/* first page */
+
+.school-logo {
+  position: absolute;
+  top: 2vh;
+  right: 1vw;
+}
+
+.big-five {
+  position: absolute;
+  right: 4vw;
+  top: 30vh;
+}
+
+.first-page-text {
+  position: absolute;
+  font-family: "aduma-light";
+}
+
+#lomdat {
+  right: 5vw;
+  top: 20vh;
+  font-size: 4rem;
+}
+
+#memadei{
+  font-size: 6rem;
+  right: 30vw;
+  top: 35vh;
+}
+
+#hadracha{
+  font-size: 6rem;
+  right: 35vw;
+  top: 42vh;
 }
