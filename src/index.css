@@ -18,6 +18,10 @@
   src: url(./fonts/AdumaBold.ttf);
 }
 
+:root{
+  --textcolor: #4E3028;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +31,7 @@ html,
 body {
   overflow-x: hidden;
   width: 100%;
+  color: var(--textcolor);
 }
 
 .all-pages {
