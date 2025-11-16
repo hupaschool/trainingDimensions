@@ -18,13 +18,19 @@
   src: url(./fonts/AdumaBold.ttf);
 }
 
-:root{
-  --textcolor: #4E3028;
+/* variables */
+:root {
+  --textcolor: #4e3028;
+  --titlesize: 3.5rem;
+  --textsize: 2rem;
+  --subtitlesize: 2.5rem;
+  --subtititlefont: "aduma-bold";
 }
 
 * {
   margin: 0;
   padding: 0;
+  direction: rtl;
 }
 
 html,
@@ -110,21 +116,68 @@ body {
   font-size: 4rem;
 }
 
-#memadei{
+#memadei {
   font-size: 6rem;
   right: 32%;
   top: 35vh;
 }
 
-#hadracha{
+#hadracha {
   font-size: 6rem;
   right: 37%;
   top: 45vh;
 }
 
-.arrow-down{
+.arrow-down {
+  height: 8vh;
   left: 50%;
   transform: translate(-50%);
-  top: 70vh;
+  top: 80vh;
   position: absolute;
+}
+
+/* second page  */
+
+.second-page {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: min(4vh, 6vh);
+}
+
+.second-page-title {
+  font-family: "aduma-bold";
+  font-size: var(--titlesize);
+  margin-right: 5vh;
+}
+
+.second-page-text {
+  line-height: 1.5rem;
+  align-self: center;
+  width: 90%;
+  text-align: center;
+  font-family: "aduma-regular";
+  font-size: var(--textsize);
+}
+
+.sub-title {
+  align-self: center;
+  font-family: var(--subtititlefont);
+  font-size: var(--subtitlesize);
+}
+
+.training-dimension{
+  height: 7vh;
+}
+
+.all-training-dimensions{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.second-arrow{
+  top: 185vh;
 }

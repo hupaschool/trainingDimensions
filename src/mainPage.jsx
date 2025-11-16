@@ -5,6 +5,11 @@ import plusSign from './assets/plusSign.svg';
 import schoolLogo from './assets/schoolLogo.svg';
 import bigFive from './assets/bigFive.svg';
 import arrowDown from './assets/arrowDown.svg';
+import pupilsDimension from './assets/pupilsDimension1.svg';
+import courseDimension from './assets/courseDimension.svg';
+import higherDimension from './assets/higherDimension.svg';
+import physicalDimension from './assets/physicalDimension.svg';
+import hierarchyDimension from './assets/heirarchyDimension.svg';
 
 const MainPage = () => {
     return ( 
@@ -17,12 +22,31 @@ const MainPage = () => {
                     <div className='first-page-text' id= "memadei">ממדי</div>
                     <div className='first-page-text' id= "hadracha">ההדרכה</div>
                     <img src = {arrowDown} className='arrow-down' alt='arrow down'/>
-
-
                 </div>
             </div>
             <div className="second-page">
-                second page
+                <div className='second-page-title'>מבוא</div>
+                <div className='sub-title'>מהם ממדי ההדרכה?</div>
+                <div className='second-page-text'>
+                    הצגה, הערכה ותחקור של קורס ייעשו בראי מימדי ההדרכה. <br></br>
+                    בחייל האוויר קיימים חמישה ממדים<br></br>
+                    שמאפיינים את כלל הצירים המרכזיים<br></br>
+                    המשפיעים על איכות וטיב ההכשרה.<br></br>
+                    הממדים הם:<br></br>
+                </div>
+                <div className='all-training-dimensions'>
+                    <img src={pupilsDimension} className='training-dimension' alt='pupils dimension'/>
+                    <img src={courseDimension} className='training-dimension' alt='course dimension'/>
+                    <img src={higherDimension} className='training-dimension' alt='higher dimension'/>
+                    <img src={physicalDimension} className='training-dimension' alt='physical dimension'/>
+                    <img src={hierarchyDimension} className='training-dimension' alt='heirarchy dimension'/>
+                </div>
+                <div className='second-page-text'>
+                    ממדי ההדרכה הם כלי מתודולוגי<br></br>
+                    לאבחון, פיתוח, ניהול והערכת הדרכה<br></br>
+                    בצה’’ל.
+                </div>
+                <img src = {arrowDown} className='arrow-down second-arrow' alt='arrow down'/>
             </div>
             <div className="third-page">
                 third page
