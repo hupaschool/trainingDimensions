@@ -120,6 +120,6 @@ body {
 .arrow-down{
   left: 50%;
   transform: translate(-50%);
-  top: 85vh;
+  top: 70vh;
   position: absolute;
 }
