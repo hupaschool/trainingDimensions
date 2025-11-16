@@ -21,7 +21,8 @@
 /* variables */
 :root {
   --textcolor: #4e3028;
-  --titlesize: 3.5rem;
+  --titlesize: 4rem;
+  --hugetitlesize: 8rem;
   --textsize: 2rem;
   --subtitlesize: 2.5rem;
   --subtititlefont: "aduma-bold";
@@ -129,10 +130,10 @@ body {
 }
 
 .arrow-down {
-  height: 8vh;
+  height: 10vh;
   left: 50%;
   transform: translate(-50%);
-  top: 80vh;
+  top: 75vh;
   position: absolute;
 }
 
@@ -168,7 +169,7 @@ body {
 }
 
 .training-dimension{
-  height: 7vh;
+  height: 8vh;
 }
 
 .all-training-dimensions{
@@ -180,4 +181,30 @@ body {
 
 .second-arrow{
   top: 185vh;
+}
+
+/* third page */
+
+.third-page-content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.third-page-header{
+  margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.third-page-title {
+  line-height: 5.5rem;
+  font-family: "aduma-bold";
+  font-size: var(--hugetitlesize);
+}
+
+.third-page-text {
+  font-family: "aduma-regular";
+  font-size: var(--textsize);
+  margin-right: 5vw;
 }
