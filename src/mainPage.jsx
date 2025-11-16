@@ -4,6 +4,7 @@ import strippedCircle from './assets/strippedCircle.svg';
 import plusSign from './assets/plusSign.svg';
 import schoolLogo from './assets/schoolLogo.svg';
 import bigFive from './assets/bigFive.svg';
+import arrowDown from './assets/arrowDown.svg';
 
 const MainPage = () => {
     return ( 
@@ -15,6 +16,7 @@ const MainPage = () => {
                     <div className='first-page-text' id= "lomdat">לומדת</div>
                     <div className='first-page-text' id= "memadei">ממדי</div>
                     <div className='first-page-text' id= "hadracha">ההדרכה</div>
+                    <img src = {arrowDown} className='arrow-down' alt='arrow down'/>
 
 
                 </div>
