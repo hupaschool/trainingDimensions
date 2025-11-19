@@ -21,9 +21,19 @@ import data from "../public/db.json";
 const MainPage = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [currTopic, setCurrTopic] = useState("");
+
   const handlePopup = (popupid) => {
-    setPopupVisible(true);
-    setCurrTopic(popupid);
+    if (!popupVisible) {
+      setCurrTopic(popupid);
+      setPopupVisible(true);
+    }
+  };
+
+  const closePopup = () => {
+    if (popupVisible) {
+      setCurrTopic("regular-bg");
+      setPopupVisible(false);
+    }
   };
 
   return (
@@ -135,7 +145,7 @@ const MainPage = () => {
                   ? "סביבה ארגונית"
                   : ""}
               </div>
-              <div className="popup-content">
+              <div className={`popup-content ${currTopic}-background`}>
                 <div className="popup-text popup-subtitles"> מתייחס ל- </div>
                 <ul className="topic-content-list">
                   {data[currTopic].text.map((item, index) => (
@@ -153,6 +163,7 @@ const MainPage = () => {
                     ))}
                 </ul>
               </div>
+              <button className="popup-text close-popup" onClick={() => {closePopup()}}>חזרה</button>
             </div>
           )}
 
