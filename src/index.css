@@ -22,7 +22,7 @@
 :root {
   --textcolor: #4e3028;
   --titlesize: 4rem;
-  --hugetitlesize: 8rem;
+  --hugetitlesize: 6rem;
   --textsize: 2rem;
   --subtitlesize: 2.5rem;
   --subtititlefont: "aduma-bold";
@@ -63,6 +63,7 @@ body {
   width: 170%;
 }
 
+
 #lower-blob {
   bottom: -30vh;
   left: -40vw;
@@ -89,6 +90,7 @@ body {
   position: absolute;
   width: 60vw;
   bottom: 20vh;
+  left: 1vw;
   z-index: 1;
 }
 
@@ -206,5 +208,201 @@ body {
 .third-page-text {
   font-family: "aduma-regular";
   font-size: var(--textsize);
-  margin-right: 5vw;
+}
+
+.all-glasses{
+  align-self: center;
+  z-index: 5;
+  width: 80%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  margin-top: 5vh;
+}
+
+.glasses{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.glasses-name{
+  font-family: "aduma-regular";
+  font-size: var(--textsize);
+}
+
+/* blob color changes animations */
+@-webkit-keyframes pupilsAnimation {
+  0% {filter: hue-rotate(0deg);}
+  100% {filter: hue-rotate(-28deg);}
+}
+
+@keyframes pupilsAnimation {
+  0% {filter: hue-rotate(0deg);}
+  100% {filter: hue-rotate(-28deg);}
+}
+
+@-webkit-keyframes higherAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(250deg);
+  }
+}
+
+@keyframes higherAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(250deg);
+  }
+}
+
+@-webkit-keyframes courseAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(170deg);
+  }
+}
+
+@keyframes courseAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(170deg);
+  }
+}
+
+@-webkit-keyframes physicalAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(100deg);
+  }
+}
+
+@keyframes physicalAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(100deg);
+  }
+}
+
+@-webkit-keyframes hierarchyGlassesAnimation {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(60deg) brightness(1.15);
+  }
+}
+
+@keyframes hierarchyGlassesAnimation {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(60deg) brightness(1.15);
+  }
+}
+
+@keyframes hierarchyAdditionalAnimation {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(60deg) brightness(1.3);
+  }
+}
+
+
+/* blobs */
+
+.pupils-glasses {
+  filter: hue-rotate(-28deg);
+  animation: pupilsAnimation 5s ;
+}
+
+.higher-glasses {
+  filter: hue-rotate(250deg);
+  animation: higherAnimation 2s ;
+
+}
+
+.course-glasses {
+  filter: hue-rotate(170deg);
+  animation: courseAnimation 2s;
+}
+
+.physical-glasses {
+  filter: hue-rotate(100deg);
+  animation: physicalAnimation 2s;
+}
+
+.hierarchy-glasses {
+  filter: hue-rotate(60deg) brightness(1.15);
+  animation: hierarchyGlassesAnimation 2s;
+}
+
+.plus-sign.hierarchy-glasses {
+  filter: hue-rotate(60deg) brightness(1.3);
+  animation: hierarchyAdditionalAnimation 2s;
+}
+
+
+.stripped-circle.hierarchy-glasses {
+  filter: hue-rotate(60deg) brightness(1.3);
+  animation: hierarchyAdditionalAnimation 2s;
+
+}
+
+/* popup */
+
+.popup-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  text-align: center;
+}
+
+.popup-page-title{
+  font-family: 'aduma-bold';
+  font-size: var(--subtitlesize);
+}
+
+.popup-content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 80%;
+  height: auto;
+  background-color: aqua;
+  padding: 1vh 2vw;
+  
+}
+
+.popup-text{
+  font-family: 'aduma-regular';
+  font-size: var(--textsize);
+}
+
+.popup-subtitles{
+  font-family: 'aduma-bold';
+  font-size: var(--textsize);
+}
+
+ul {
+  list-style: none;
 }

@@ -10,8 +10,22 @@ import courseDimension from "./assets/courseDimension.svg";
 import higherDimension from "./assets/higherDimension.svg";
 import physicalDimension from "./assets/physicalDimension.svg";
 import hierarchyDimension from "./assets/heirarchyDimension.svg";
+import pupilsGlasses from "./assets/pupilsGlasses.svg";
+import higherGlasses from "./assets/higherGlasses.svg";
+import courseGlasses from "./assets/courseGlasses.svg";
+import physicalGlasses from "./assets/physicalGlasses.svg";
+import hierarchyGlasses from "./assets/hierarchyGlasses.svg";
+import React, { useState } from "react";
+import data from "../public/db.json";
 
 const MainPage = () => {
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [currTopic, setCurrTopic] = useState("");
+  const handlePopup = (popupid) => {
+    setPopupVisible(true);
+    setCurrTopic(popupid);
+  };
+
   return (
     <div className="all-pages">
       <div className="first-page">
@@ -82,28 +96,134 @@ const MainPage = () => {
         <div className="blob-design">
           <img
             src={lowerBlob}
-            className="blob"
+            className={`blob lower-blob ${currTopic}`}
             id="lower-blob"
             alt="lower blob"
           />
           <img
             src={higherBlob}
-            className="blob"
+            className={`blob higher-blob ${currTopic}`}
             id="higher-blob"
             alt="higher blob"
           />
           <img
             src={strippedCircle}
+            className={`stripped-circle ${currTopic}`}
             id="stripped-circle"
             alt="stripped circle"
           />
-          <img src={plusSign} id="plus-sign" alt="plus sign" />
+          <img
+            src={plusSign}
+            id="plus-sign"
+            alt="plus sign"
+            className={`plus-sign ${currTopic}`}
+          />
         </div>
         <div className="third-page-content">
+          {popupVisible && (
+            <div className="popup-page">
+              <div className="popup-page-title">
+                {currTopic == "pupils-glasses"
+                  ? "חניכים"
+                  : currTopic == "higher-glasses"
+                  ? "סגל"
+                  : currTopic == "course-glasses"
+                  ? "תוכנית הכשרה"
+                  : currTopic == "physical-glasses"
+                  ? "סביבה פיזית"
+                  : currTopic == "hierarchy-glasses"
+                  ? "סביבה ארגונית"
+                  : ""}
+              </div>
+              <div className="popup-content">
+                <div className="popup-text popup-subtitles"> מתייחס ל- </div>
+                <ul className="topic-content-list">
+                  {data[currTopic].text.map((item, index) => (
+                    <li key={index} className="popup-text topic-content-item">
+                        {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="popup-text popup-subtitles"> שאלות שנשאל: </div>
+                <ul className="topic-questions-list">
+                    {data[currTopic].questions.map((item, index) => (
+                      <li key={index} className="popup-text topic-questions-item">
+                        {item}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
+          )}
+
           <div className="third-page-header">
-            <div className="third-page-title">5 ממדי</div>
-            <div className="third-page-title">ההדרכה</div>
-            <div className="third-page-text">לחצו על כל ממד הדרכה לפירוט</div>
+            <div className="third-page-title" style={{ display: popupVisible ? "none" : "block" }}>
+              5 ממדי
+            </div>
+            <div
+              className="third-page-title"
+              style={{ display: popupVisible ? "none" : "block" }}
+            >
+              ההדרכה
+            </div>
+            <div
+              className="third-page-text"
+              style={{ display: popupVisible ? "none" : "block" }}
+            >
+              לחצו על כל ממד הדרכה לפירוט
+            </div>
+          </div>
+          <div className="all-glasses" style={{ display: popupVisible ? "none" : "flex" }}>
+            <div
+              className="glasses"
+              id="pupils-glasses"
+              onClick={() => {
+                handlePopup("pupils-glasses");
+              }}
+            >
+              <img src={pupilsGlasses} alt="pupils glasses" />
+              <div className="glasses-name">חניכים</div>
+            </div>
+            <div
+              className="glasses"
+              id="higher-glasses"
+              onClick={() => {
+                handlePopup("higher-glasses");
+              }}
+            >
+              <img src={higherGlasses} alt="higher glasses" />
+              <div className="glasses-name">סגל</div>
+            </div>
+            <div
+              className="glasses"
+              id="course-glasses"
+              onClick={() => {
+                handlePopup("course-glasses");
+              }}
+            >
+              <img src={courseGlasses} alt="course glasses" />
+              <div className="glasses-name">תוכנית הכשרה</div>
+            </div>
+            <div
+              className="glasses"
+              id="physical-glasses"
+              onClick={() => {
+                handlePopup("physical-glasses");
+              }}
+            >
+              <img src={physicalGlasses} alt="physical glasses" />
+              <div className="glasses-name">סביבה פיזית</div>
+            </div>
+            <div
+              className="glasses"
+              id="hierarchy-glasses"
+              onClick={() => {
+                handlePopup("hierarchy-glasses");
+              }}
+            >
+              <img src={hierarchyGlasses} alt="hierarchy glasses" />
+              <div className="glasses-name">סביבה ארגונית</div>
+            </div>
           </div>
         </div>
       </div>
