@@ -17,10 +17,14 @@ import physicalGlasses from "./assets/physicalGlasses.svg";
 import hierarchyGlasses from "./assets/hierarchyGlasses.svg";
 import React, { useState } from "react";
 import data from "../public/db.json";
+import { useNavigate } from "react-router-dom";
+
 
 const MainPage = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [currTopic, setCurrTopic] = useState("");
+  const [popupClosing, setPopupClosing] = useState(false);
+  const navigate = useNavigate();
 
   const handlePopup = (popupid) => {
     if (!popupVisible) {
@@ -30,10 +34,13 @@ const MainPage = () => {
   };
 
   const closePopup = () => {
-    if (popupVisible) {
-      setCurrTopic("regular-bg");
+    setPopupClosing(true);
+
+    setTimeout(() => {
       setPopupVisible(false);
-    }
+      setPopupClosing(false);
+      setCurrTopic("");
+    }, 400);
   };
 
   return (
@@ -106,19 +113,25 @@ const MainPage = () => {
         <div className="blob-design">
           <img
             src={lowerBlob}
-            className={`blob lower-blob ${currTopic}`}
+            className={`blob lower-blob ${currTopic} ${
+              popupClosing ? "blob-changing" : ""
+            }`}
             id="lower-blob"
             alt="lower blob"
           />
           <img
             src={higherBlob}
-            className={`blob higher-blob ${currTopic}`}
+            className={`blob higher-blob ${currTopic} ${
+              popupClosing ? "blob-changing" : ""
+            }`}
             id="higher-blob"
             alt="higher blob"
           />
           <img
             src={strippedCircle}
-            className={`stripped-circle ${currTopic}`}
+            className={`stripped-circle ${currTopic} ${
+              popupClosing ? "blob-changing" : ""
+            }`}
             id="stripped-circle"
             alt="stripped circle"
           />
@@ -126,7 +139,9 @@ const MainPage = () => {
             src={plusSign}
             id="plus-sign"
             alt="plus sign"
-            className={`plus-sign ${currTopic}`}
+            className={`plus-sign ${currTopic} ${
+              popupClosing ? "blob-changing" : ""
+            }`}
           />
         </div>
         <div className="third-page-content">
@@ -145,30 +160,44 @@ const MainPage = () => {
                   ? "סביבה ארגונית"
                   : ""}
               </div>
-              <div className={`popup-content ${currTopic}-background`}>
+              <div
+                className={`popup-content ${
+                  popupClosing ? "closing" : "opening"
+                } ${currTopic}-background`}
+              >
                 <div className="popup-text popup-subtitles"> מתייחס ל- </div>
                 <ul className="topic-content-list">
                   {data[currTopic].text.map((item, index) => (
                     <li key={index} className="popup-text topic-content-item">
-                        {item}
+                      {item}
                     </li>
                   ))}
                 </ul>
                 <div className="popup-text popup-subtitles"> שאלות שנשאל: </div>
                 <ul className="topic-questions-list">
-                    {data[currTopic].questions.map((item, index) => (
-                      <li key={index} className="popup-text topic-questions-item">
-                        {item}
-                      </li>
-                    ))}
+                  {data[currTopic].questions.map((item, index) => (
+                    <li key={index} className="popup-text topic-questions-item">
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <button className="popup-text close-popup" onClick={() => {closePopup()}}>חזרה</button>
+              <button
+                className="popup-text close-popup"
+                onClick={() => {
+                  closePopup();
+                }}
+              >
+                חזרה
+              </button>
             </div>
           )}
 
           <div className="third-page-header">
-            <div className="third-page-title" style={{ display: popupVisible ? "none" : "block" }}>
+            <div
+              className="third-page-title"
+              style={{ display: popupVisible ? "none" : "block" }}
+            >
               5 ממדי
             </div>
             <div
@@ -184,57 +213,67 @@ const MainPage = () => {
               לחצו על כל ממד הדרכה לפירוט
             </div>
           </div>
-          <div className="all-glasses" style={{ display: popupVisible ? "none" : "flex" }}>
+          <div className="glass-page-content" style={{ display: popupVisible ? "none" : "flex" }}>
             <div
-              className="glasses"
-              id="pupils-glasses"
-              onClick={() => {
-                handlePopup("pupils-glasses");
-              }}
+              className="all-glasses"
+              style={{ display: popupVisible ? "none" : "flex" }}
             >
-              <img src={pupilsGlasses} alt="pupils glasses" />
-              <div className="glasses-name">חניכים</div>
+              <div
+                className="glasses"
+                id="pupils-glasses"
+                onClick={() => {
+                  handlePopup("pupils-glasses");
+                }}
+              >
+                <img src={pupilsGlasses} alt="pupils glasses" />
+                <div className="glasses-name">חניכים</div>
+              </div>
+              <div
+                className="glasses"
+                id="higher-glasses"
+                onClick={() => {
+                  handlePopup("higher-glasses");
+                }}
+              >
+                <img src={higherGlasses} alt="higher glasses" />
+                <div className="glasses-name">סגל</div>
+              </div>
+              <div
+                className="glasses"
+                id="course-glasses"
+                onClick={() => {
+                  handlePopup("course-glasses");
+                }}
+              >
+                <img src={courseGlasses} alt="course glasses" />
+                <div className="glasses-name">תוכנית הכשרה</div>
+              </div>
+              <div
+                className="glasses"
+                id="physical-glasses"
+                onClick={() => {
+                  handlePopup("physical-glasses");
+                }}
+              >
+                <img src={physicalGlasses} alt="physical glasses" />
+                <div className="glasses-name">סביבה פיזית</div>
+              </div>
+              <div
+                className="glasses"
+                id="hierarchy-glasses"
+                onClick={() => {
+                  handlePopup("hierarchy-glasses");
+                }}
+              >
+                <img src={hierarchyGlasses} alt="hierarchy glasses" />
+                <div className="glasses-name">סביבה ארגונית</div>
+              </div>
             </div>
-            <div
-              className="glasses"
-              id="higher-glasses"
-              onClick={() => {
-                handlePopup("higher-glasses");
-              }}
-            >
-              <img src={higherGlasses} alt="higher glasses" />
-              <div className="glasses-name">סגל</div>
-            </div>
-            <div
-              className="glasses"
-              id="course-glasses"
-              onClick={() => {
-                handlePopup("course-glasses");
-              }}
-            >
-              <img src={courseGlasses} alt="course glasses" />
-              <div className="glasses-name">תוכנית הכשרה</div>
-            </div>
-            <div
-              className="glasses"
-              id="physical-glasses"
-              onClick={() => {
-                handlePopup("physical-glasses");
-              }}
-            >
-              <img src={physicalGlasses} alt="physical glasses" />
-              <div className="glasses-name">סביבה פיזית</div>
-            </div>
-            <div
-              className="glasses"
-              id="hierarchy-glasses"
-              onClick={() => {
-                handlePopup("hierarchy-glasses");
-              }}
-            >
-              <img src={hierarchyGlasses} alt="hierarchy glasses" />
-              <div className="glasses-name">סביבה ארגונית</div>
-            </div>
+            <button className="popup-text close-popup" id="exercise-btn" onClick={() => {
+                navigate("/practice");
+            }}>
+              לתרגול לחצו
+            </button>
           </div>
         </div>
       </div>

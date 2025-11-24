@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "aduma-light";
+  src: url(./fonts/AdumaLight.ttf);
+}
+
+@font-face {
+  font-family: "aduma-medium";
+  src: url(./fonts/AdumaMedium.ttf);
+}
+
+@font-face {
+  font-family: "aduma-regular";
+  src: url(./fonts/AdumaRegular.ttf);
+}
+
+@font-face {
+  font-family: "aduma-bold";
+  src: url(./fonts/AdumaBold.ttf);
+}
+
+html,
+body {
+  margin: 0;
+  top: 0;
+  left: 0;
+  font-family: "aduma-regular";
+  direction: rtl;
+  color: var(--textcolor);
+}
+
+:root {
+  --textcolor: #4e3028;
+  --titlesize: 4rem;
+  --hugetitlesize: 6rem;
+  --textsize: 2rem;
+  --subtitlesize: 2.5rem;
+  --subtititlefont: "aduma-bold";
+}
+
+.practice-page {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/questionPageBg.svg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.question-page-header {
+  margin-top: 1vh;
+}
+
+.question-number {
+  font-size: var(--textsize);
+  font-family: "aduma-regular";
+  line-height: 1em;
+}
+
+.general-instruction {
+  font-size: var(--textsize);
+  font-family: "aduma-light";
+}
+
+.general-title {
+  font-size: var(--titlesize);
+  line-height: 1em;
+}
+
+.question-text {
+  font-size: var(--textsize);
+  font-family: "aduma-medium";
+  line-height: 1.2em;
+}
+
+.content-box {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 13vh;
+  margin: 0.7vh 2vw;
+  background: rgba(255, 255, 255, 0.237);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+}
+
+.answer-text {
+  font-size: var(--textsize);
+  line-height: 1.3em;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.next-question-button{
+  margin-top: 1vh;
+  border: none;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1vh 5vw;
+}
+
+.next-question-text{
+   font-family: "aduma-regular";
+  font-size: var(--textsize);
+}

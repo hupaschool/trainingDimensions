@@ -1,5 +1,7 @@
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from './MainPage';
+import Practice from './Practice';
+
 function App() {
 
 
@@ -10,6 +12,7 @@ function App() {
         <header className='App-Content'>
           <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="/practice" element={<Practice/>} />
           </Routes>
         </header>
       </div>

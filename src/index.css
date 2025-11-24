@@ -18,6 +18,157 @@
   src: url(./fonts/AdumaBold.ttf);
 }
 
+/* blob color changes animations */
+@-webkit-keyframes pupilsAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-28deg);
+  }
+}
+
+@keyframes pupilsAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-28deg);
+  }
+}
+
+@-webkit-keyframes higherAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(250deg);
+  }
+}
+
+@keyframes higherAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(250deg);
+  }
+}
+
+@-webkit-keyframes courseAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(170deg);
+  }
+}
+
+@keyframes courseAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(170deg);
+  }
+}
+
+@-webkit-keyframes physicalAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(100deg);
+  }
+}
+
+@keyframes physicalAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(100deg);
+  }
+}
+
+@-webkit-keyframes hierarchyGlassesAnimation {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(60deg) brightness(1.15);
+  }
+}
+
+@keyframes hierarchyGlassesAnimation {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(60deg) brightness(1.15);
+  }
+}
+
+@keyframes hierarchyAdditionalAnimation {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  100% {
+    filter: hue-rotate(60deg) brightness(1.3);
+  }
+}
+
+@-webkit-keyframes popupFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+}
+
+@keyframes popupFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+}
+
+@keyframes popupAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* start lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* end in place */
+  }
+}
+
+@-webkit-keyframes hueReset {
+  0% {
+    filter: inherit;
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes hueReset {
+  0% {
+    filter: inherit;
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
 /* variables */
 :root {
   --textcolor: #4e3028;
@@ -231,159 +382,49 @@ body {
   font-size: var(--textsize);
 }
 
-/* blob color changes animations */
-@-webkit-keyframes pupilsAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(-28deg);
-  }
-}
 
-@keyframes pupilsAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(-28deg);
-  }
-}
-
-@-webkit-keyframes higherAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(250deg);
-  }
-}
-
-@keyframes higherAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(250deg);
-  }
-}
-
-@-webkit-keyframes courseAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(170deg);
-  }
-}
-
-@keyframes courseAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(170deg);
-  }
-}
-
-@-webkit-keyframes physicalAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(100deg);
-  }
-}
-
-@keyframes physicalAnimation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(100deg);
-  }
-}
-
-@-webkit-keyframes hierarchyGlassesAnimation {
-  0% {
-    filter: hue-rotate(0deg) brightness(1);
-  }
-  100% {
-    filter: hue-rotate(60deg) brightness(1.15);
-  }
-}
-
-@keyframes hierarchyGlassesAnimation {
-  0% {
-    filter: hue-rotate(0deg) brightness(1);
-  }
-  100% {
-    filter: hue-rotate(60deg) brightness(1.15);
-  }
-}
-
-@keyframes hierarchyAdditionalAnimation {
-  0% {
-    filter: hue-rotate(0deg) brightness(1);
-  }
-  100% {
-    filter: hue-rotate(60deg) brightness(1.3);
-  }
-}
-
-@keyframes popupAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); /* start lower */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* end in place */
-  }
-}
 
 /* blobs */
 
-.regular-bg{
-  filter: hue-rotate(0deg);
-}
-
 .pupils-glasses {
-  filter: hue-rotate(-28deg);
-  animation: pupilsAnimation 5s;
+  --hue: -28deg;
+  animation: pupilsAnimation 5s forwards;
 }
 
 .higher-glasses {
-  filter: hue-rotate(250deg);
-  animation: higherAnimation 2s;
+  --hue: 250deg;
+  animation: higherAnimation 2s forwards;
 }
 
 .course-glasses {
-  filter: hue-rotate(170deg);
-  animation: courseAnimation 2s;
+  --hue: 170deg;
+  animation: courseAnimation 2s forwards;
 }
 
 .physical-glasses {
-  filter: hue-rotate(100deg);
-  animation: physicalAnimation 2s;
+  --hue: 100deg;
+  animation: physicalAnimation 2s forwards;
 }
 
 .hierarchy-glasses {
-  filter: hue-rotate(60deg) brightness(1.15);
-  animation: hierarchyGlassesAnimation 2s;
+  --hue: 60deg;
+  animation: hierarchyGlassesAnimation 2s forwards;
 }
 
 .plus-sign.hierarchy-glasses {
-  filter: hue-rotate(60deg) brightness(1.3);
-  animation: hierarchyAdditionalAnimation 2s;
+  --hue: 60deg;
+  animation: hierarchyAdditionalAnimation 2s forwards;
 }
 
 .stripped-circle.hierarchy-glasses {
-  filter: hue-rotate(60deg) brightness(1.3);
-  animation: hierarchyAdditionalAnimation 2s;
+  --hue: 60deg;
+  animation: hierarchyAdditionalAnimation 2s forwards;
 }
 
 /* popup */
+.popup-content.closing {
+  animation: popupFadeOut 0.4s ease-in forwards;
+}
 
 .popup-page {
   display: flex;
@@ -459,4 +500,19 @@ ul {
   background-color: white;
   border-radius: 1rem;
   padding: 1vh 5vw;
+}
+
+/* exercise */
+
+.glass-page-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+#exercise-btn{
+  margin-top: 2vh;
+  z-index: 10;
 }
