@@ -18,6 +18,7 @@ import hierarchyGlasses from "./assets/hierarchyGlasses.svg";
 import React, { useState } from "react";
 import data from "../public/db.json";
 import { useNavigate } from "react-router-dom";
+import hupaLogo from "./assets/hupaLogo2.png";
 
 
 const MainPage = () => {
@@ -47,6 +48,7 @@ const MainPage = () => {
     <div className="all-pages">
       <div className="first-page">
         <img src={schoolLogo} className="school-logo" alt="school logo" />
+        <img src={hupaLogo} className="hupa-logo" alt="hupa logo" />
         <div className="first-page-content">
           <img src={bigFive} className="big-five" alt="big five" />
           <div className="first-page-text" id="lomdat">

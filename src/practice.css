@@ -40,7 +40,7 @@ body {
 .practice-page {
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/questionPageBg.svg");
+  background-image: url("./assets/questionPageBg2.svg");
   background-size: cover;
   display: flex;
   align-items: center;

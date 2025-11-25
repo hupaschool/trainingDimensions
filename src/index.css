@@ -192,6 +192,8 @@ body {
   color: var(--textcolor);
 }
 
+
+
 .all-pages {
   position: relative;
   height: 300vh;
@@ -251,6 +253,13 @@ body {
   top: 2vh;
   right: 1vw;
 }
+
+.hupa-logo{
+  position: absolute;
+  top: 1vh;
+  left: 2vw;
+}
+
 
 .big-five {
   position: absolute;
