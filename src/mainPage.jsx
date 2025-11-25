@@ -18,7 +18,7 @@ import hierarchyGlasses from "./assets/hierarchyGlasses.svg";
 import React, { useState } from "react";
 import data from "../public/db.json";
 import { useNavigate } from "react-router-dom";
-import hupaLogo from "./assets/hupaLogo2.png";
+import hupaLogo from "./assets/hupaLogo3.svg";
 
 
 const MainPage = () => {
