@@ -37,9 +37,9 @@ const Practice = () => {
       {lastPage && (
         <div className="final-page">
           <div className="question-page-header">
-            <div className="general-title"> סיימתם את התירגול!</div>
+            <div className="general-title"> סיימתם את התרגול!</div>
             <div className="general-instruction last-page-text">
-              אתם יכולים לחזור לתחילת הלומדה ע"י לחיצה על הכפתור
+              חזרו לתחילת הלומדה ע"י לחיצה על הכפתור
             </div>
             <button
               className="next-question-button next-question-text"
@@ -73,7 +73,7 @@ const Practice = () => {
                   ? "תשובה נכונה!"
                   : rightAnswer === false
                   ? "תשובה לא נכונה"
-                  : "בחרו בתשובה הנכונה"}
+                  : " "}
               </div>
             </div>
           </div>

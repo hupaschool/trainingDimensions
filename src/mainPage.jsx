@@ -5,11 +5,11 @@ import plusSign from "./assets/plusSign.svg";
 import schoolLogo from "./assets/schoolLogo.svg";
 import bigFive from "./assets/bigFive.svg";
 import arrowDown from "./assets/arrowDown.svg";
-import pupilsDimension from "./assets/pupilsDimension1.svg";
-import courseDimension from "./assets/courseDimension.svg";
-import higherDimension from "./assets/higherDimension.svg";
-import physicalDimension from "./assets/physicalDimension.svg";
-import hierarchyDimension from "./assets/heirarchyDimension.svg";
+import pupilsDimension from "./assets/pupilsDimensionBetter.svg";
+import courseDimension from "./assets/courseDimensionBetter.svg";
+import higherDimension from "./assets/higherDimensionBetter.svg";
+import physicalDimension from "./assets/physicalDimensionBetter.svg";
+import hierarchyDimension from "./assets/hierarchyDimensionBetter.svg";
 import pupilsGlasses from "./assets/pupilsGlasses.svg";
 import higherGlasses from "./assets/higherGlasses.svg";
 import courseGlasses from "./assets/courseGlasses.svg";
@@ -65,7 +65,7 @@ const MainPage = () => {
         <div className="second-page-title">מבוא</div>
         <div className="sub-title">מהם ממדי ההדרכה?</div>
         <div className="second-page-text">
-          הצגה, הערכה ותחקור של קורס ייעשו בראי מימדי ההדרכה. <br></br>
+          הצגה, הערכה ותחקור של קורס ייעשו בראי ממדי ההדרכה. <br></br>
           בחייל האוויר קיימים חמישה ממדים<br></br>
           שמאפיינים את כלל הצירים המרכזיים<br></br>
           המשפיעים על איכות וטיב ההכשרה.<br></br>
@@ -99,7 +99,7 @@ const MainPage = () => {
           />
         </div>
         <div className="second-page-text">
-          ממדי ההדרכה הם כלי מתודולוגי<br></br>
+           ממדי ההדרכה הם כלי מתודולוגי (שיטה) <br></br>
           לאבחון, פיתוח, ניהול והערכת הדרכה<br></br>
           בצה’’ל.
         </div>
@@ -165,7 +165,7 @@ const MainPage = () => {
                   popupClosing ? "closing" : "opening"
                 } ${currTopic}-background`}
               >
-                <div className="popup-text popup-subtitles"> מתייחס ל- </div>
+                <div className="popup-text popup-subtitles"> מתייחס ל: </div>
                 <ul className="topic-content-list">
                   {data[currTopic].text.map((item, index) => (
                     <li key={index} className="popup-text topic-content-item">
@@ -173,7 +173,7 @@ const MainPage = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="popup-text popup-subtitles"> שאלות שנשאל: </div>
+                <div className="popup-text popup-subtitles"> שאלות לדוגמה </div>
                 <ul className="topic-questions-list">
                   {data[currTopic].questions.map((item, index) => (
                     <li key={index} className="popup-text topic-questions-item">
